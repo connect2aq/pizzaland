@@ -8,7 +8,7 @@ const pizzas = [
     id: 1,
     name: 'capricciosa',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
+      'Loremipsum dolor sit amet consectetur adipisicing elit. Quia recusandae dolorum enim eveniet. Mollitia laudantium, sunt blanditiis ratione quam delectus.',
     image: '/capricciosa.webp',
     priceSm: 9.99,
     priceMd: 10.99,
@@ -377,5 +377,15 @@ const pizzas = [
 ];
 
 export default function Home() {
-  return <section>home</section>;
+  return (
+    <section>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-2 gap-[15px] md:grid-cols-3 xl:grid-cols-4 xl:gap-[30px] py-12">
+          {pizzas.map((pizza) => {
+            return <Pizza pizza={pizza}></Pizza>;
+          })}
+        </div>
+      </div>
+    </section>
+  );
 }
